@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Atani – Servicio Finalizado</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #fff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-bottom: 1rem;
+    }
+    a.email {
+      color: #0066ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .language-selector select {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .language-selector select:hover {
+      border-color: #0066ff;
+    }
+    .content {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .content.fade {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="language-selector">
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="es">🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="zh">🇨🇳 中文</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="bn">🇧🇩 বাংলা</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="pt">🇧🇷 Português</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="it">🇮🇹 Italiano</option>
+    </select>
+  </div>
+
+  <div class="content" id="content">
+    <h1 id="title">🔒 Atani ha cerrado definitivamente</h1>
+    <h2 id="subtitle">El servicio finalizó el 30 de junio de 2025</h2>
+
+    <p id="paragraph1">Tras una exitosa trayectoria, Atani ha cesado operaciones y la plataforma dejó de estar disponible en la fecha indicada. Entendemos que algunas personas no alcanzaron a retirar sus fondos a tiempo.</p>
+
+    <p id="paragraph2">Si este es tu caso, o tienes alguna consulta pendiente relacionada con tu cuenta, por favor contáctanos y revisaremos cada situación personalmente.</p>
+
+    <p id="paragraph3">Escribe a: <a href="mailto:support@atani.com" class="email">support@atani.com</a></p>
+
+    <footer id="footer">Gracias por haber sido parte de Atani. Lamentamos cualquier inconveniente.</footer>
+  </div>
+
+  <script>
+    const translations = {
+      es: {
+        lang: 'es',
+        title: '🔒 Atani ha cerrado definitivamente',
+        subtitle: 'El servicio finalizó el 30 de junio de 2025',
+        paragraph1: 'Tras una exitosa trayectoria, Atani ha cesado operaciones y la plataforma dejó de estar disponible en la fecha indicada. Entendemos que algunas personas no alcanzaron a retirar sus fondos a tiempo.',
+        paragraph2: 'Si este es tu caso, o tienes alguna consulta pendiente relacionada con tu cuenta, por favor contáctanos y revisaremos cada situación personalmente.',
+        paragraph3: 'Escribe a: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Gracias por haber sido parte de Atani. Lamentamos cualquier inconveniente.',
+        pageTitle: 'Atani – Servicio Finalizado'
+      },
+      en: {
+        lang: 'en',
+        title: '🔒 Atani has permanently closed',
+        subtitle: 'The service ended on June 30, 2025',
+        paragraph1: 'After a successful journey, Atani has ceased operations and the platform became unavailable on the indicated date. We understand that some people did not manage to withdraw their funds in time.',
+        paragraph2: 'If this is your case, or you have any pending queries related to your account, please contact us and we will review each situation personally.',
+        paragraph3: 'Write to: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Thank you for being part of Atani. We apologize for any inconvenience.',
+        pageTitle: 'Atani – Service Ended'
+      },
+      zh: {
+        lang: 'zh',
+        title: '🔒 Atani已永久关闭',
+        subtitle: '服务于2025年6月30日结束',
+        paragraph1: '经过成功的发展历程，Atani已停止运营，平台在指定日期停止可用。我们理解有些人没有及时提取资金。',
+        paragraph2: '如果您是这种情况，或者您有任何与账户相关的待处理查询，请联系我们，我们将亲自审查每种情况。',
+        paragraph3: '写信至: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: '感谢您成为Atani的一部分。对于任何不便，我们深表歉意。',
+        pageTitle: 'Atani – 服务已结束'
+      },
+      hi: {
+        lang: 'hi',
+        title: '🔒 अटानी स्थायी रूप से बंद हो गया है',
+        subtitle: 'सेवा 30 जून, 2025 को समाप्त हुई',
+        paragraph1: 'एक सफल यात्रा के बाद, अटानी ने परिचालन बंद कर दिया है और प्लेटफॉर्म निर्दिष्ट दिनांक पर अनुपलब्ध हो गया। हम समझते हैं कि कुछ लोग समय पर अपने फंड निकालने में सफल नहीं हुए।',
+        paragraph2: 'यदि यह आपका मामला है, या आपके खाते से संबंधित कोई लंबित प्रश्न हैं, तो कृपया हमसे संपर्क करें और हम प्रत्येक स्थिति की व्यक्तिगत रूप से समीक्षा करेंगे।',
+        paragraph3: 'लिखें: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'अटानी का हिस्सा होने के लिए धन्यवाद। किसी भी असुविधा के लिए हम खेद प्रकट करते हैं।',
+        pageTitle: 'अटानी – सेवा समाप्त'
+      },
+      fr: {
+        lang: 'fr',
+        title: '🔒 Atani a fermé définitivement',
+        subtitle: 'Le service a pris fin le 30 juin 2025',
+        paragraph1: 'Après un parcours réussi, Atani a cessé ses opérations et la plateforme est devenue indisponible à la date indiquée. Nous comprenons que certaines personnes n\'ont pas réussi à retirer leurs fonds à temps.',
+        paragraph2: 'Si c\'est votre cas, ou si vous avez des questions en suspens liées à votre compte, veuillez nous contacter et nous examinerons chaque situation personnellement.',
+        paragraph3: 'Écrivez à: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Merci d\'avoir fait partie d\'Atani. Nous nous excusons pour tout désagrément.',
+        pageTitle: 'Atani – Service Terminé'
+      },
+      ar: {
+        lang: 'ar',
+        title: '🔒 أتاني مغلق نهائياً',
+        subtitle: 'انتهت الخدمة في 30 يونيو 2025',
+        paragraph1: 'بعد رحلة ناجحة، توقفت أتاني عن العمل وأصبحت المنصة غير متاحة في التاريخ المحدد. نحن نتفهم أن بعض الأشخاص لم يتمكنوا من سحب أموالهم في الوقت المناسب.',
+        paragraph2: 'إذا كانت هذه حالتك، أو لديك أي استفسارات معلقة متعلقة بحسابك، يرجى الاتصال بنا وسنراجع كل حالة شخصياً.',
+        paragraph3: 'اكتب إلى: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'شكراً لكونك جزءاً من أتاني. نعتذر عن أي إزعاج.',
+        pageTitle: 'أتاني – انتهت الخدمة'
+      },
+      bn: {
+        lang: 'bn',
+        title: '🔒 আতানি স্থায়ীভাবে বন্ধ হয়ে গেছে',
+        subtitle: 'সেবা ৩০ জুন, ২০২৫ তারিখে শেষ হয়েছে',
+        paragraph1: 'একটি সফল যাত্রার পর, আতানি কার্যক্রম বন্ধ করেছে এবং নির্দিষ্ট তারিখে প্ল্যাটফর্মটি অনুপলব্ধ হয়ে গেছে। আমরা বুঝতে পারি যে কিছু লোক সময়মতো তাদের তহবিল প্রত্যাহার করতে পারেনি।',
+        paragraph2: 'যদি এটি আপনার ক্ষেত্রে হয়, বা আপনার অ্যাকাউন্ট সম্পর্কিত কোন মুলতুবি প্রশ্ন থাকে, দয়া করে আমাদের সাথে যোগাযোগ করুন এবং আমরা প্রতিটি পরিস্থিতি ব্যক্তিগতভাবে পর্যালোচনা করব।',
+        paragraph3: 'লিখুন: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'আতানির অংশ হওয়ার জন্য ধন্যবাদ। যেকোনো অসুবিধার জন্য আমরা দুঃখিত।',
+        pageTitle: 'আতানি – সেবা শেষ'
+      },
+      ru: {
+        lang: 'ru',
+        title: '🔒 Atani окончательно закрыт',
+        subtitle: 'Сервис завершился 30 июня 2025 года',
+        paragraph1: 'После успешного пути Atani прекратил операции, и платформа стала недоступна в указанную дату. Мы понимаем, что некоторые люди не успели вывести свои средства вовремя.',
+        paragraph2: 'Если это ваш случай, или у вас есть какие-либо нерешенные вопросы, связанные с вашим счетом, пожалуйста, свяжитесь с нами, и мы рассмотрим каждую ситуацию лично.',
+        paragraph3: 'Пишите на: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Спасибо за то, что были частью Atani. Приносим извинения за любые неудобства.',
+        pageTitle: 'Atani – Сервис Завершен'
+      },
+      pt: {
+        lang: 'pt',
+        title: '🔒 Atani fechou definitivamente',
+        subtitle: 'O serviço terminou em 30 de junho de 2025',
+        paragraph1: 'Após uma jornada bem-sucedida, a Atani cessou as operações e a plataforma ficou indisponível na data indicada. Entendemos que algumas pessoas não conseguiram retirar seus fundos a tempo.',
+        paragraph2: 'Se este é o seu caso, ou você tem alguma consulta pendente relacionada à sua conta, entre em contato conosco e revisaremos cada situação pessoalmente.',
+        paragraph3: 'Escreva para: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Obrigado por ter feito parte da Atani. Lamentamos qualquer inconveniente.',
+        pageTitle: 'Atani – Serviço Encerrado'
+      },
+      ja: {
+        lang: 'ja',
+        title: '🔒 Ataniは完全に閉鎖されました',
+        subtitle: 'サービスは2025年6月30日に終了しました',
+        paragraph1: '成功した歩みの後、Ataniは営業を停止し、指定された日付でプラットフォームが利用できなくなりました。一部の方が時間内に資金を引き出すことができなかったことを理解しています。',
+        paragraph2: 'これがあなたのケースである場合、またはアカウントに関連する未解決の問い合わせがある場合は、お気軽にお問い合わせください。各状況を個人的に確認いたします。',
+        paragraph3: '連絡先: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Ataniの一部であっていただき、ありがとうございました。ご不便をおかけして申し訳ございません。',
+        pageTitle: 'Atani – サービス終了'
+      },
+      de: {
+        lang: 'de',
+        title: '🔒 Atani ist endgültig geschlossen',
+        subtitle: 'Der Service endete am 30. Juni 2025',
+        paragraph1: 'Nach einer erfolgreichen Reise hat Atani den Betrieb eingestellt und die Plattform wurde zum angegebenen Datum nicht mehr verfügbar. Wir verstehen, dass einige Personen ihre Mittel nicht rechtzeitig abheben konnten.',
+        paragraph2: 'Falls dies auf Sie zutrifft oder Sie offene Fragen zu Ihrem Konto haben, kontaktieren Sie uns bitte und wir werden jede Situation persönlich prüfen.',
+        paragraph3: 'Schreiben Sie an: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Danke, dass Sie Teil von Atani waren. Wir entschuldigen uns für etwaige Unannehmlichkeiten.',
+        pageTitle: 'Atani – Service Beendet'
+      },
+      it: {
+        lang: 'it',
+        title: '🔒 Atani ha chiuso definitivamente',
+        subtitle: 'Il servizio è terminato il 30 giugno 2025',
+        paragraph1: 'Dopo un percorso di successo, Atani ha cessato le operazioni e la piattaforma è diventata non disponibile alla data indicata. Comprendiamo che alcune persone non sono riuscite a ritirare i loro fondi in tempo.',
+        paragraph2: 'Se questo è il vostro caso, o avete domande in sospeso relative al vostro account, vi preghiamo di contattarci e esamineremo ogni situazione personalmente.',
+        paragraph3: 'Scrivete a: <a href="mailto:support@atani.com" class="email">support@atani.com</a>',
+        footer: 'Grazie per essere stati parte di Atani. Ci scusiamo per qualsiasi inconveniente.',
+        pageTitle: 'Atani – Servizio Terminato'
+      }
+    };
+
+    function changeLanguage() {
+      const select = document.getElementById('languageSelect');
+      const selectedLang = select.value;
+      const content = document.getElementById('content');
+      
+      content.classList.add('fade');
+      
+      setTimeout(() => {
+        const translation = translations[selectedLang];
+        
+        document.getElementById('title').textContent = translation.title;
+        document.getElementById('subtitle').textContent = translation.subtitle;
+        document.getElementById('paragraph1').textContent = translation.paragraph1;
+        document.getElementById('paragraph2').textContent = translation.paragraph2;
+        document.getElementById('paragraph3').innerHTML = translation.paragraph3;
+        document.getElementById('footer').textContent = translation.footer;
+        
+        document.title = translation.pageTitle;
+        document.documentElement.lang = translation.lang;
+        
+        content.classList.remove('fade');
+        
+        localStorage.setItem('preferredLanguage', selectedLang);
+      }, 150);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang && translations[savedLang]) {
+        document.getElementById('languageSelect').value = savedLang;
+        changeLanguage();
+      }
+    });
+  </script>
+
+</body>
+</html>
